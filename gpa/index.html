@@ -3,10 +3,31 @@
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        
+        <meta content="github, hagreweb , hagreitsolution, kiztopia, websitedevelopers, ethiopia ,ethiopiawebdeveloperes, github hagre" name="keywords">
+     <meta content="My website(profile) contains my Github account email, all necessary information, and my previous projects." name="description">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Gpa Calculator</title>
+        <title>Gpa Calculator | developed by kirubel</title>
+        <link href="../style.css" rel="stylesheet">
+        <link rel="shortcut icon" type="image/x-icon" href="../mf-avatar.svg">
     </head>
+    <style>
+        #app{
+            margin: 30px;
+        }
+    </style>
     <body>
+        <header>
+            <div class="hero-text">
+                <h1>Software developer</h1>
+                <p>I design and code beautifully simple things, and I love what I do.</p>
+            </div>
+            <div class="header-background"></div>
+            <div class="hero"><img src="../land.svg" alt=""> </div>
+            <div class="me"><img src="../mf-avatar.svg" alt="hero image"></div>
+            
+        </header>
         <div id="app">
         <h1>GPA calculator</h1>
             Your GPA: {{result}}
@@ -25,9 +46,19 @@
             <button @click="calculateSubject()">add</button>
         </div>
         <hr>
-
+        <a href="../index.html" class="btn btn-success btn-xs">checkout my site</a>
     </div>
-        <script src="./vue.global.js">
+    <footer>
+        <div class="tip">
+            <h5>living, learning, & leveling up one day at a time.</h5>
+        </div>
+
+        <div class="copyright">
+            <p>handcrafted by me <i class="fa fa-copyright"></i> 2020 </p>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
             
         </script>
 
