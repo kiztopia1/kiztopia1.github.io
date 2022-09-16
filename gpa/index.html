@@ -1,0 +1,106 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gpa Calculator</title>
+    </head>
+    <body>
+        <div id="app">
+        <h1>GPA calculator</h1>
+            Your GPA: {{result}}
+            <hr>
+        <div class="subject">
+            <div>
+                grade
+                <input v-model.number="grade" type="number" name="grade" id="grade">
+            </div>
+            <br>
+            <div>
+                hour
+                <input v-model.number="hour" type="number" name="hr" id="">
+            </div>
+            <br>
+            <button @click="calculateSubject()">add</button>
+        </div>
+        <hr>
+
+    </div>
+        <script src="./vue.global.js">
+            
+        </script>
+
+        <script>
+            
+            const gpaApp = {
+                data () {
+                    return{
+                        gpa: 'Vue.js Fundamentals',
+                        grade: 0,
+                        hour: 0,
+                        grades: 0,
+                        hours: 0,
+                        result:0
+                    }
+                },
+                // this will allow as to add pre calculated values
+                // and we can call them from the template by using '{{ computed function name}}'
+                computed: {
+                    cardCounter(){
+                        return this.cards.length;
+                    },
+                    
+                },
+                methods :{
+                    calculateSubject(){
+                        
+                        let result = this.gradeCalc(this.grade) * this.hour
+                        this.grades+= result
+                        this.hours += this.hour
+                        
+                        this.grade = 0
+                        this.hour = 0
+                        this.totalCalc()
+                    },
+                    gradeCalc(num){
+                        if(num >85){
+                            return 4
+                        }if(num > 79){
+                            return 3.75
+                        }if ( num > 73){
+                            return 3.5
+                        }if (num > 67){
+                            return 3
+                        }if (num > 61){
+                            return 2.75
+                        }if (num > 55){
+                            return 2.5
+                        }if (num > 49){
+                            return 2
+                        }if (num > 43){
+                            return 1.75
+                        }if (num > 37){
+                            return 1.25
+                        }if (num > 32){
+                            return 1
+                        }else{
+                            return 0
+                        }
+                    },
+                    totalCalc(){
+                        
+                        total = this.grades / this.hours
+                        this.result = total
+                    }
+                }
+                
+            };
+            const app = Vue.createApp(gpaApp);
+
+
+            app.mount('#app')
+        </script>
+
+    </body>
+    </html>
