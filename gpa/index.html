@@ -30,7 +30,8 @@
         </header>
         <div id="app">
         <h1>GPA calculator</h1>
-            Your GPA: {{result}}
+            Your GPA: {{gpa}} <br>
+            number of course: {{course}}
             <hr>
         <div class="subject">
             <div>
@@ -43,7 +44,7 @@
                 <input v-model.number="hour" type="number" name="hr" id="">
             </div>
             <br>
-            <button @click="calculateSubject()">add</button>
+            <button @click="calculateSubject()">add</button>   <button @click="show()">Finish</button>
         </div>
         <hr>
         <a href="../index.html" class="btn btn-success btn-xs">checkout my site</a>
@@ -67,12 +68,13 @@
             const gpaApp = {
                 data () {
                     return{
-                        gpa: 'Vue.js Fundamentals',
+                        gpa: 0,
                         grade: 0,
                         hour: 0,
                         grades: 0,
                         hours: 0,
-                        result:0
+                        result:0,
+                        course:0
                     }
                 },
                 // this will allow as to add pre calculated values
@@ -92,6 +94,7 @@
                         
                         this.grade = 0
                         this.hour = 0
+                        this.course += 1
                         this.totalCalc()
                     },
                     gradeCalc(num){
@@ -123,6 +126,8 @@
                         
                         total = this.grades / this.hours
                         this.result = total
+                    },show(){
+                        this.gpa = this.result
                     }
                 }
                 
