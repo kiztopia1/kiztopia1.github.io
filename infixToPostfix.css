@@ -1,0 +1,11 @@
+body {
+  color: white;
+  background-color: #021618;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+a {
+  color: rgb(116, 159, 109);
+  text-decoration: none;
+}
